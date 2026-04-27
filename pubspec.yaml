@@ -1,0 +1,14 @@
+name: fizzy_button
+description: A fizzy animated login button with bubble effects and loading transition.
+version: 0.0.1
+homepage: https://github.com/txngerine/fizzy_button
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
