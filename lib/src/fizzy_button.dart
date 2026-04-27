@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'bubble.dart';
 import 'bubble_painter.dart';
 
-class FizzyLoginButton extends StatefulWidget {
+class FizzyButton extends StatefulWidget {
   final Future<void> Function()? onTap;
 
   final double width;
@@ -16,7 +16,7 @@ class FizzyLoginButton extends StatefulWidget {
   final String text;
   final String loadingText;
 
-  const FizzyLoginButton({
+  const FizzyButton({
     super.key,
     this.onTap,
     this.width = 220,
@@ -29,10 +29,10 @@ class FizzyLoginButton extends StatefulWidget {
   });
 
   @override
-  State<FizzyLoginButton> createState() => _FizzyLoginButtonState();
+  State<FizzyButton> createState() => _FizzyButtonState();
 }
 
-class _FizzyLoginButtonState extends State<FizzyLoginButton>
+class _FizzyButtonState extends State<FizzyButton>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   final List<Bubble> bubbles = [];
@@ -136,8 +136,7 @@ class _FizzyLoginButtonState extends State<FizzyLoginButton>
                       height: 26,
                       child: CircularProgressIndicator(
                         strokeWidth: 3,
-                        valueColor:
-                            AlwaysStoppedAnimation<Color>(Colors.white),
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                       ),
                     )
                   : Text(

@@ -1,3 +1,3 @@
 library fizzy_button;
 
-export 'src/fizzy_login_button.dart';
+export 'src/fizzy_button.dart';
