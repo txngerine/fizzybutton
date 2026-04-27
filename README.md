@@ -1,39 +1,148 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Fizzy Button 💧✨
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+A beautiful, animated **fizzy login button** for Flutter with bubble effects, smooth loading transitions, and morphing into a circular progress indicator.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+---
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## ✨ Features
 
-## Features
+* 💧 Fizzy bubble animation on tap
+* 🔄 Smooth transition to loading state
+* 🔘 Button morphs into a circular loader
+* ⚡ Fully customizable (colors, text, size)
+* 🔌 Async support for real login APIs
+* 🎯 Lightweight & easy to use
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+---
 
-## Getting started
+## 📸 Preview
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+> Add your GIF here (recommended)
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```
+assets/demo.gif
 ```
 
-## Additional information
+---
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## 🚀 Installation
+
+Add this to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  fizzy_button: ^0.0.1
+```
+
+Then run:
+
+```bash
+flutter pub get
+```
+
+---
+
+## 🛠 Usage
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:fizzy_button/fizzy_button.dart';
+
+class DemoScreen extends StatelessWidget {
+  const DemoScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: FizzyLoginButton(
+          onTap: () async {
+            await Future.delayed(const Duration(seconds: 2));
+          },
+        ),
+      ),
+    );
+  }
+}
+```
+
+---
+
+## ⚙️ Customization
+
+```dart
+FizzyLoginButton(
+  width: 240,
+  height: 60,
+  text: "Sign In",
+  loadingText: "Please wait...",
+  gradientColors: [Colors.purple, Colors.blue],
+  bubbleColor: Colors.white,
+  textColor: Colors.white,
+  onTap: () async {
+    await Future.delayed(const Duration(seconds: 3));
+  },
+)
+```
+
+---
+
+## 🎬 Behavior
+
+1. User taps button
+2. Fizzy bubbles animate
+3. Text changes to **"Logging in..."**
+4. Button shrinks into a circle
+5. Circular loader appears
+6. Returns to normal after async completes
+
+---
+
+## 🧠 API
+
+| Property         | Type                      | Default           | Description         |
+| ---------------- | ------------------------- | ----------------- | ------------------- |
+| `onTap`          | `Future<void> Function()` | `null`            | Async callback      |
+| `width`          | `double`                  | `220`             | Button width        |
+| `height`         | `double`                  | `60`              | Button height       |
+| `text`           | `String`                  | `"Login"`         | Default label       |
+| `loadingText`    | `String`                  | `"Logging in..."` | Loading label       |
+| `gradientColors` | `List<Color>`             | `[blue, cyan]`    | Background gradient |
+| `bubbleColor`    | `Color`                   | `white`           | Bubble color        |
+| `textColor`      | `Color`                   | `white`           | Text color          |
+
+---
+
+## 🧪 Example
+
+See the `/example` folder for a complete working app.
+
+---
+
+## 📦 Roadmap
+
+* ✅ Loading animation
+* 🔜 Success checkmark animation
+* 🔜 Error state with shake
+* 🔜 Controller support
+* 🔜 More bubble physics customization
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+Feel free to open issues or submit pull requests.
+
+---
+
+## 📄 License
+
+MIT License © 2026
+
+---
+
+## 💡 Author
+
+Built with ❤️ using Flutter
